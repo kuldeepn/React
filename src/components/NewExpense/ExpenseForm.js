@@ -48,7 +48,7 @@ const ExpenseForm = (props) => {
             type="text"
             onChange={titleChangeHandler}
             value={enteredTitle}
-            placeholder='Enter your name'
+            placeholder="Enter your name"
             required
           ></input>
         </div>
@@ -58,7 +58,7 @@ const ExpenseForm = (props) => {
             type="number"
             onChange={amountChangeHandler}
             value={enteredAmount}
-            placeholder='Enter Amount'
+            placeholder="Enter Amount"
             required
           ></input>
         </div>
@@ -75,6 +75,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>

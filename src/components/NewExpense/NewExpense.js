@@ -5,10 +5,6 @@ import React, { useState } from "react";
 const NewExpense = (props) => {
   const [isEditing, setEditing] = useState(false);
 
-  const startEditingHandler = () => {
-    setEditing(true);
-  };
-
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -16,6 +12,10 @@ const NewExpense = (props) => {
     };
     props.onAddExpense(expenseData);
     setEditing(false);
+  };
+
+  const startEditingHandler = () => {
+    setEditing(true);
   };
 
   const stopEditingHandler = () => {

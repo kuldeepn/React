@@ -3,7 +3,7 @@ import Form from './components/Form';
 
 function App() {
   return (
-    <div className='bg-black box-border'>
+    <div>
       <Form></Form>
     </div>
   );

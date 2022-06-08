@@ -1,9 +1,9 @@
 
-import Form from './components/Form';
+import Form from './components/Userdata/Form';
 
 function App() {
   return (
-    <div>
+    <div className='bg-black'>
       <Form></Form>
     </div>
   );

@@ -27,16 +27,17 @@ const Form = (props) => {
   return (
     <div className="flex items-center justify-center h-96">
       <form className="p-4 bg-gray-800 text-center rounded-md w-96" onSubmit={SumbitHandler}>
-        <span className="text-white text-2xl">Enter you details</span>
-        <div className="py-2 text-left ">
+        <h1 className="text-white text-2xl py-3">Enter you details</h1>
+        <hr className='h-5'></hr>
+        <div className="text-left px-20">
           <label className="text-white"> Username </label>
           <input
             type="text"
             onChange={UserNameHandler}
-            className="block"
+            className="block rounded-md"
           ></input>
           <label className="text-white"> Age (Years) </label>
-          <input type="number" onChange={AgeHandler} className="block"></input>
+          <input type="number" onChange={AgeHandler} className="block rounded-md w-auto"></input>
         </div>
         <Button type="submit"> Add User </Button>
         <div className="px-24">

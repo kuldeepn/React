@@ -1,7 +1,5 @@
 const DataListing  = (props) => {
-    return (
-        
-    )
+    return 
 }
  
 export default DataListing;

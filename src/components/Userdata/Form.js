@@ -40,9 +40,6 @@ const Form = (props) => {
           <input type="number" onChange={AgeHandler} className="block rounded-md w-auto"></input>
         </div>
         <Button type="submit"> Add User </Button>
-        <div className="px-24">
-          {/* <Button type="reset"> Reset </Button> */}
-        </div>
       </form>
     </div>
   );

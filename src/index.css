@@ -7,3 +7,7 @@
    text-white border-2 bg-purple-700
   ;
 }
+
+.card{
+  @apply  p-4 bg-gray-800 text-center rounded-md
+}

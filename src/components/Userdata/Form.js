@@ -16,28 +16,27 @@ const Form = (props) => {
   const SumbitHandler = (event) => {
     event.preventDefault();
 
-    const data = {
-      username: enteredUsername,
-      age: enteredAge,
-    };
-
-    console.log(data);
+    props.onAddUser(enteredUsername, enteredAge);
   };
 
   return (
-    <div className="flex items-center justify-center h-96">
-      <form className="p-4 bg-gray-800 text-center rounded-md w-96" onSubmit={SumbitHandler}>
-        <h1 className="text-white text-2xl py-3">Enter you details</h1>
-        <hr className='h-5'></hr>
+    <div className="flex items-center justify-center h-80">
+      <form className="card" onSubmit={SumbitHandler}>
+        <h1 className="text-white text-2xl py-3">Enter your details</h1>
+        <hr className="h-5"></hr>
         <div className="text-left px-20">
           <label className="text-white"> Username </label>
           <input
             type="text"
             onChange={UserNameHandler}
-            className="block rounded-md"
+            className="block rounded-md w-60"
           ></input>
           <label className="text-white"> Age (Years) </label>
-          <input type="number" onChange={AgeHandler} className="block rounded-md w-auto"></input>
+          <input
+            type="number"
+            onChange={AgeHandler}
+            className="block rounded-md w-60"
+          ></input>
         </div>
         <Button type="submit"> Add User </Button>
       </form>

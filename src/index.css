@@ -9,5 +9,5 @@
 }
 
 .card{
-  @apply  p-4 bg-gray-800 text-center rounded-md
+  @apply  bg-gray-800 text-center rounded-md
 }

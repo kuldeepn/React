@@ -1,11 +1,15 @@
 const DataListing = (props) => {
   return (
-    <div className="flex items-center justify-center py-4">
-      <ul className="text-white rounded-md px-2 text-center w-96 bg-slate-800">
+    <div className="flex justify-center text-xl">
+      <ul className="text-black card w-96">
         {props.users.map((user) => (
-          <li className="py-2 ">
-            {user.username} ({user.age} years old)
-          </li>
+          <div className="p-2">
+            <li>
+              <div className='rounded-md py-2 bg-slate-300'>
+                {user.username} ({user.age} years old)
+              </div>
+            </li>
+          </div>
         ))}
       </ul>
     </div>

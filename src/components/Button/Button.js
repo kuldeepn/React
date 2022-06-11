@@ -1,7 +1,7 @@
 const Button = (props) => {
   return (
     <div className="py-5">
-      <button type={props.type} classname={ props.className} className="btn">
+      <button type={props.type}  className="btn">
         {props.children}
       </button>
     </div>

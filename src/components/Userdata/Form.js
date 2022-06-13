@@ -45,11 +45,13 @@ const Form = (props) => {
 
   return (
     <div>
-      {error && <ErrorModal
-        title={error.title}
-        message={error.message}
-        onConfirm={ErroHandler}
-      ></ErrorModal>}
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={ErroHandler}
+        ></ErrorModal>
+      )}
       <div className="flex items-center justify-center h-80">
         <form className="card p-4" onSubmit={SumbitHandler}>
           <h1 className="text-white text-2xl py-3">Enter your details</h1>

@@ -1,22 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Button from "../Button/Button";
 import ErrorModal from "./ErrorModal";
 
 const Form = (props) => {
-  const [enteredUsername, setUserName] = useState("");
-  const [enteredAge, setAge] = useState("");
   const [error, setError] = useState("");
-
-  const UserNameHandler = (event) => {
-    setUserName(event.target.value);
-  };
-
-  const AgeHandler = (event) => {
-    setAge(event.target.value);
-  };
+  const InputUsername = useRef();
+  const InputAge = useRef();
 
   const SumbitHandler = (event) => {
     event.preventDefault();
+    const enteredUsername = InputUsername.current.value;
+    const enteredAge = InputAge.current.value;
+
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       setError({
         title: "Invalid error",
@@ -33,10 +28,9 @@ const Form = (props) => {
       return;
     }
 
-    
     props.onAddUser(enteredUsername, enteredAge);
-    setUserName("");
-    setAge("");
+    InputUsername.current.value = "";
+    InputAge.current.value = "";
   };
 
   const ErroHandler = () => {
@@ -44,7 +38,7 @@ const Form = (props) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       {error && (
         <ErrorModal
           title={error.title}
@@ -60,22 +54,20 @@ const Form = (props) => {
             <label className="text-white"> Username </label>
             <input
               type="text"
-              onChange={UserNameHandler}
-              value={enteredUsername}
+              ref={InputUsername}
               className="block rounded-md w-60"
             ></input>
             <label className="text-white"> Age (Years) </label>
             <input
               type="number"
-              onChange={AgeHandler}
-              value={enteredAge}
+              ref={InputAge}
               className="block rounded-md w-60"
             ></input>
           </div>
           <Button type="submit"> Add User </Button>
         </form>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

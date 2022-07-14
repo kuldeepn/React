@@ -1,3 +1,5 @@
+import Card from "../UI/Card";
+
 const DUMMY_MEALS = [
   {
     id: "m1",
@@ -29,8 +31,10 @@ const AvailableMeals = () => {
   const mealsList = DUMMY_MEALS.map((meal) => <li>{meal.name}</li>);
 
   return (
-    <section className='meals'>
-      <ul>{mealsList}</ul>
+    <section className="meals">
+      <Card>
+        <ul>{mealsList}</ul>
+      </Card>
     </section>
   );
 };

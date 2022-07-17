@@ -1,5 +1,10 @@
+const MealItemForm = (params) => {
+  return (
+    <form className="form">
+      <input />
+      <button>+Add</button>
+    </form>
+  );
+};
 
-
-MealItemForm = (params) => {
-     return 
-}
+export default MealItemForm;

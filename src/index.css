@@ -2,53 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
- .header {
-   @apply fixed top-0 left-0 w-full h-20 bg-red-700 flex justify-between items-center z-10
-   text-white p-5 text-2xl font-semibold shadow-xl
+.header {
+  @apply fixed top-0 left-0 w-full h-20 bg-red-700 flex justify-between items-center z-10
+   text-white p-5 text-2xl font-semibold shadow-xl;
 }
 
-.mainImage{
-  @apply  w-full h-[25rem]  z-0 overflow-hidden
+.mainImage {
+  @apply w-full h-[25rem]  z-0 overflow-hidden;
 }
-
 
 .mainImage img {
-  @apply  w-[110%]  h-full object-cover -translate-x-4 -translate-y-16
-  -rotate-[3deg] 
+  @apply w-[110%]  h-full object-cover -translate-x-4 -translate-y-16
+  -rotate-[3deg];
 }
 
-.cart-button{
+.cart-button {
   @apply cursor-pointer bg-[#4d1601] text-white
-  px-3 py-0 flex justify-around items-center rounded-3xl 
+  px-3 py-0 flex justify-around items-center rounded-3xl;
 }
 
-.badge{
-  @apply ml-4 text-lg pt-2 pb-2
-
+.badge {
+  @apply ml-4 text-lg pt-2 pb-2;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   margin: 0%;
   background-color: #3f3f3f;
 }
 
-.summary{
+.summary {
   @apply text-center max-w-[45rem] w-[90%] m-auto -mt-40 relative bg-[#383838]
-  text-white shadow-2xl rounded-xl p-6
+  text-white shadow-2xl rounded-xl p-6;
 }
 
 .summary h2 {
-@apply  mt-0 text-4xl py-2 font-bold
+  @apply mt-0 text-4xl py-2 font-bold;
 }
 
-.meals{
-  @apply max-w-4xl w-11/12 m-8
+.meals {
+  @apply max-w-4xl w-11/12 m-8;
 }
 
-.meals ul{
-  @apply list-none m-0 p-0
+.meals ul {
+  @apply list-none m-0 p-0;
+}
+
+.form {
+  @apply text-right;
+}
+
+.form button {
+  @apply text-inherit cursor-pointer bg-[#8a2b06]
+  border border-[#8a2b06] px-4 font-bold rounded-xl text-white;
 }

@@ -85,12 +85,12 @@ body {
 }
 
 .action button{
-  @apply cursor-pointer bg-transparent  border-black 
+  @apply cursor-pointer bg-transparent border-2 border-[#8a2b06]
   p-2 px-4 rounded-3xl ml-4 hover:bg-[#5a1a01] hover:text-white hover:border-[#5a1a01]
 }
 
 .action .button--alt{
-  @apply text-[#8a2b06]
+  @apply text-[#8a2b06]  
 }
 
 .action .button{
@@ -98,7 +98,7 @@ body {
 }
 
 .backdrop{
-  @apply fixed top-0 left-0 w-full h-[100vh] z-20 opacity-70
+  @apply fixed top-0 left-0 w-full h-[100vh] z-20  bg-black opacity-80
 }
 
 .modal{

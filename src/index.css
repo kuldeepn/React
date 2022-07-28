@@ -73,7 +73,7 @@ body {
 }
 
 .cart-items{
-  @apply list-none m-0 px-1
+  @apply list-none m-0 px-1 max-h-80 overflow-scroll
 }
 
 .total{

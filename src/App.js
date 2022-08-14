@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     fetchMoviesHandler();
-  },[])
+  }, []);
 
   const fetchMoviesHandler = async () => {
     setIsLoading(true);
@@ -21,53 +21,59 @@ function App() {
 
     try {
       const response = await fetch(
-        "https://react-http-92746-default-rtdb.firebaseio.com/movies.json");
-      
+        "https://react-http-92746-default-rtdb.firebaseio.com/movies.json"
+      );
+
       if (!response.ok) {
         throw new Error("Something went wrong !");
       }
 
       const data = await response.json();
 
-      const transformedMovies = data.results.map((movieData) => {
-        return {
-          id: movieData.episode_id,
-          title: movieData.title,
-          openingText: movieData.opening_crawl,
-        };
-      });
-      setMovies(transformedMovies);
+      const LoadedMovies = [];
+
+      for (const key in data) {
+        LoadedMovies.push({
+          id: key,
+          title: data[key].title,
+          openingText: data[key].openingText,
+        });
+      }
+
+      setMovies(LoadedMovies);
     } catch (error) {
       setError(error.message);
     }
     setIsLoading(false);
   };
 
-  const addMovieHandler = async(movie) => {
-
-   const response=await fetch("https://react-http-92746-default-rtdb.firebaseio.com/movies.json", {
-      method: 'POST',
-      body:JSON.stringify(movie)
-   })
+  const addMovieHandler = async (movie) => {
+    const response = await fetch(
+      "https://react-http-92746-default-rtdb.firebaseio.com/movies.json",
+      {
+        method: "POST",
+        body: JSON.stringify(movie),
+      }
+    );
     const data = response.json();
     console.log(data);
-}
+  };
 
   let content;
-  
+
   if (movies.length > 0) {
-    content = <MoviesList movies={movies}/>
+    content = <MoviesList movies={movies} />;
   }
 
   if (movies.length === 0) {
-    content=<p>Found no movies..</p>
+    content = <p>Found no movies..</p>;
   }
   if (error) {
     content = <p>{error}</p>;
   }
   if (isLaoding) {
-  content=<p>Loading...</p>
-}
+    content = <p>Loading...</p>;
+  }
 
   return (
     <React.Fragment>
@@ -77,9 +83,7 @@ function App() {
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
-      <section>
-        {content}
-      </section>
+      <section>{content}</section>
     </React.Fragment>
   );
 }
